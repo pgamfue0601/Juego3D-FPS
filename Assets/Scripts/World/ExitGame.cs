@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class ExitGame : MonoBehaviour
 {
@@ -22,8 +23,18 @@ public class ExitGame : MonoBehaviour
         {
             if (GameManager.Instance.enemyCounter >= 4 && Input.GetKeyDown(KeyCode.E))
             {
-                
+                Debug.Log("Juego finalizado");
             }
         }
+    }
+
+    public void Continue()
+    {
+        SceneManager.LoadScene("GameScene");
+    }
+
+    public void Exit()
+    {
+        Application.Quit();
     }
 }
