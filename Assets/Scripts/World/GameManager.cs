@@ -39,6 +39,11 @@ public class GameManager : MonoBehaviour
             progress.text = "";
             mission.text = "¡Misión cumplida, ahora ve a la puerta de la pared del fondo y pulsa E!";
         }
+
+        if (Input.GetKeyDown(KeyCode.Escape))
+        {
+            Application.Quit();
+        }
     }
 
     public void KillConfirmed()
