@@ -17,7 +17,8 @@ public class GameManager : MonoBehaviour
     public int tipoDeArma;
     public bool muerto = false;
     public int enemyCounter = 0;
-    public TextMeshProUGUI progress;
+    [SerializeField] private TextMeshProUGUI progress;
+    [SerializeField] private TextMeshProUGUI mission;
 
     private void Awake()
     {
@@ -33,6 +34,16 @@ public class GameManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        if (enemyCounter >= 4)
+        {
+            progress.text = "";
+            mission.text = "¡Misión cumplida, ahora ve a la puerta de la pared del fondo y pulsa E!";
+        }
+    }
+
+    public void KillConfirmed()
+    {
+        enemyCounter++;
+        progress.text = enemyCounter.ToString() + "/4";
     }
 }

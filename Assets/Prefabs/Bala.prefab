@@ -180,7 +180,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e8ff0526d4488f246bda7164478d8344, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  efectoExplosion: {fileID: 3871046870284131954, guid: 65f19a70c598a224ca87c17f3dfe9a8e,
+  efectoExplosion: {fileID: 3548588485384254792, guid: 8e01df1cb248be44492fc0b0aca44675,
     type: 3}
 --- !u!135 &6531636774225973274
 SphereCollider:

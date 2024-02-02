@@ -21,8 +21,7 @@ public class Bullet : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("Enemigo"))
         {
-            GameManager.Instance.enemyCounter += 1;
-            GameManager.Instance.progress.text = GameManager.Instance.enemyCounter.ToString() + "/4";
+            GameManager.Instance.KillConfirmed();
             Instantiate(efectoExplosion, transform.position, transform.rotation);
             Destroy(collision.gameObject);
         }

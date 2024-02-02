@@ -8,11 +8,11 @@ public class EnemyShoot : MonoBehaviour
     public Transform spawnBulletPoint;
     public Transform playerPosition;
     public float bulletVelocity = 100;
-    public float maxDistance = 100;
+    public float maxDistance = 200;
     // Start is called before the first frame update
     void Start()
     {
-        Invoke("ShootPlayer", 3);
+        Invoke("ShootPlayer", Random.Range(1.5f, 2.25f));
     }
 
     // Update is called once per frame
@@ -28,7 +28,7 @@ public class EnemyShoot : MonoBehaviour
             Vector3 playerDirection = playerPosition.position - transform.position;
             GameObject newEnemyBullet = Instantiate(enemyBullet, spawnBulletPoint.position, spawnBulletPoint.rotation);
             newEnemyBullet.GetComponent<Rigidbody>().AddForce(playerDirection * bulletVelocity, ForceMode.Force);
-            Invoke("ShootPlayer", 3);
+            Invoke("ShootPlayer", Random.Range(1.5f, 2.25f));
         }
     }
 

@@ -18,17 +18,16 @@ public class GrenadeExplosion : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        if (other.gameObject.CompareTag("Enemigo"))
+        if (other.CompareTag("Enemigo"))
         {
+            GameManager.Instance.KillConfirmed();
             Destroy(other.gameObject);
         }
-    }
 
-    private void OnTriggerStay(Collider other)
-    {
-        if (other.gameObject.CompareTag("Enemigo"))
+        if (other.CompareTag("Player"))
         {
-            Destroy(other.gameObject);
+            Debug.Log("Jugadorenlaexplosion");
+            other.GetComponent<PlayerInteraction>().StartCoroutine(other.GetComponent<PlayerInteraction>().GrenadeDamage());
         }
     }
 }

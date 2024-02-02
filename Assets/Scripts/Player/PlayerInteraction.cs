@@ -70,6 +70,23 @@ public class PlayerInteraction : MonoBehaviour
         }
     }
 
+    public IEnumerator GrenadeDamage()
+    {
+        Debug.Log("daño recibido");
+        vulnerable = false;
+        GameManager.Instance.vidas -= 40;
+        healthLeft.text = GameManager.Instance.vidas.ToString();
+        if (GameManager.Instance.vidas <= 0)
+        {
+            Muerto();
+        }
+        else
+        {
+            yield return new WaitForSeconds(2f);
+            vulnerable = true;
+        }
+    }
+
     private void Muerto()
     {
         GameManager.Instance.muerto = true;

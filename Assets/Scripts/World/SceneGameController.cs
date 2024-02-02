@@ -23,7 +23,9 @@ public class ExitGame : MonoBehaviour
         {
             if (GameManager.Instance.enemyCounter >= 4 && Input.GetKeyDown(KeyCode.E))
             {
+                Cursor.lockState = CursorLockMode.Confined;
                 Debug.Log("Juego finalizado");
+                SceneManager.LoadScene("CompleteScene");
             }
         }
     }

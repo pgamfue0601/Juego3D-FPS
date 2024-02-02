@@ -12,6 +12,7 @@ public class ThrowGrenade : MonoBehaviour
     public float throwForce = 30f;
     public GameObject efectoExplosion;
     public TextMeshProUGUI grenadesLeft;
+    
     // Start is called before the first frame update
     void Start()
     {
@@ -38,7 +39,17 @@ public class ThrowGrenade : MonoBehaviour
         yield return new WaitForSeconds(2.25f);
         GameObject explosionEffect = Instantiate(efectoExplosion, newGrenade.transform.position, newGrenade.transform.rotation);
         explosionAudioSource.PlayOneShot(explosion);
-        Destroy(newGrenade, 2f);
         Destroy(explosionEffect, 2f);
+        Destroy(newGrenade, 2f);
+        
+    }
+
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.CompareTag("Enemigo"))
+        {
+            GameManager.Instance.KillConfirmed();
+            Destroy(other.gameObject);
+        }
     }
 }
