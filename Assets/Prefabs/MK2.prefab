@@ -78,6 +78,26 @@ PrefabInstance:
       propertyPath: m_Name
       value: MK2
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 96f59debe1287a74a91fcf9cae75235e,
+        type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 3082854467857815979, guid: 96f59debe1287a74a91fcf9cae75235e,
+        type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 3565747176955067726, guid: 96f59debe1287a74a91fcf9cae75235e,
+        type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 5781832815079380286, guid: 96f59debe1287a74a91fcf9cae75235e,
+        type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects:
     - {fileID: 625477253831689655, guid: 96f59debe1287a74a91fcf9cae75235e, type: 3}
